@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/quotesFragment">
+
+    <fragment
+        android:id="@+id/quotesFragment"
+        android:name="com.test.strangerthings.presentation.quote.QuotesFragment"
+        android:label="fragment_quotes"
+        tools:layout="@layout/fragment_quotes" >
+        <action
+            android:id="@+id/action_quotesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.test.strangerthings.presentation.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+
+        <argument
+            android:name="quote"
+            app:argType="com.test.strangerthings.data.model.QuotesItem" />
+
+    </fragment>
+</navigation>
